@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahwill | Modern Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Noto Sans Bengali for proper Bangla rendering -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        bengali: ['Noto Sans Bengali', 'sans-serif'],
+                    },
+                    colors: {
+                        'accent': '#008080', // Teal
+                        'teal': {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        /* Smooth scrolling for carousel */
+        .snap-x {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .snap-center {
+            scroll-snap-align: center;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-black font-sans antialiased overflow-x-hidden">
+
+    <!-- Mobile Header -->
+    <header
+        class="md:hidden fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 px-4 h-16 flex items-center justify-between">
+        <button onclick="toggleSidebar()" class="p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+        <div class="flex items-center gap-2">
+            <!-- Logo Icon -->
+            <img src="img_logo_cover/logo%20icon%20Tahwill%20300.jpg" alt="Tahwill"
+                class="w-8 h-8 object-contain rounded-full">
+            <h1 class="font-bold text-xl tracking-tighter uppercase">Tahwill</h1>
+        </div>
+        <button onclick="toggleCart()" class="p-2 relative">
+            <i class="fa-solid fa-bag-shopping text-xl"></i>
+            <span id="mobile-cart-badge"
+                class="absolute top-1 right-0 bg-black text-white text-[9px] h-4 w-4 rounded-full flex items-center justify-center opacity-0 transition-opacity">0</span>
+        </button>
+    </header>
+
+    <div class="flex min-h-screen pt-16 md:pt-0">
+
+        <!-- SIDEBAR NAVIGATION -->
+        <aside id="sidebar"
+            class="fixed inset-y-0 left-0 w-72 bg-white border-r border-gray-100 transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-40 flex flex-col h-full">
+            <div class="p-8 hidden md:flex items-center gap-3">
+                <!-- Logo Icon -->
+                <img src="img_logo_cover/logo%20icon%20Tahwill%20300.jpg" alt="Tahwill"
+                    class="w-10 h-10 object-contain rounded-full">
+                <h1 class="font-bold text-3xl tracking-tighter uppercase">Tahwill</h1>
+            </div>
+
+            <nav class="flex-1 px-4 space-y-1 overflow-y-auto pt-4">
+                <button onclick="filterCategory('all')"
+                    class="nav-item w-full text-left px-4 py-3 rounded-md text-sm font-medium bg-black text-white transition-colors"
+                    data-cat="all">All Items</button>
+                <button onclick="filterCategory('t-shirt')"
+                    class="nav-item w-full text-left px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors"
+                    data-cat="t-shirt">T-Shirts</button>
+                <button onclick="filterCategory('trouser')"
+                    class="nav-item w-full text-left px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors"
+                    data-cat="trouser">Trousers</button>
+            </nav>
+
+            <div class="p-6 border-t border-gray-100 text-xs text-gray-400">
+                <!-- About Us moved to bottom area -->
+                <button onclick="showAbout()"
+                    class="nav-item w-full text-left py-2 mb-4 rounded-md text-sm font-bold text-gray-800 hover:text-black transition-colors flex items-center justify-between group"
+                    data-cat="about">
+                    <span>About Us</span>
+                    <i
+                        class="fa-solid fa-chevron-right text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                </button>
+
+                <p class="mb-2">Need help?</p>
+                <a href="#" class="flex items-center gap-2 text-black font-bold hover:underline">
+                    <i class="fa-brands fa-whatsapp text-teal-600"></i> Chat Support
+                </a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="flex-1 md:ml-72 p-4 md:p-10 lg:p-16">
+
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 id="collection-title" class="text-4xl font-bold tracking-tight mb-2">New Arrivals</h2>
+                    <p id="collection-subtitle" class="text-gray-500 text-sm">Premium heavyweight cotton. Made in Dhaka.
+                    </p>
+                </div>
+                <!-- Desktop Cart Trigger -->
+                <button onclick="toggleCart()"
+                    class="hidden md:flex items-center gap-2 group hover:opacity-70 transition">
+                    <span class="text-sm font-bold border-b border-black pb-0.5">Cart (<span
+                            id="desktop-cart-count">0</span>)</span>
+                </button>
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid"
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12">
+                <!-- Javascript will inject products here -->
+            </div>
+
+            <!-- ABOUT SECTION (Hidden by default) -->
+            <div id="about-section" class="hidden max-w-4xl mx-auto animate-fade-in">
+                <div class="bg-white p-8 md:p-12 rounded-2xl border border-gray-100 shadow-xl text-center">
+
+                    <!-- Header -->
+                    <div class="mb-10">
+                        <h3 class="text-3xl md:text-4xl font-bold mb-3 font-sans uppercase tracking-tight">Tahwill
+                            Clothing & Sportswear</h3>
+                        <p class="text-teal-600 font-medium tracking-wide text-sm md:text-base uppercase">Wear What YOU
+                            Believe</p>
+                    </div>
+
+                    <div class="space-y-12 text-gray-800 font-bengali text-left">
+
+                        <!-- Core Values -->
+                        <div
+                            class="grid md:grid-cols-2 gap-8 items-center bg-gray-50 p-6 rounded-xl border border-gray-100">
+                            <div>
+                                <p class="font-bold text-xl md:text-2xl mb-2 text-gray-900 leading-tight">ইসলামিক ভ্যালু
+                                    ও <br><span class="text-teal-600">Tawheed inspired</span> ডিজাইন</p>
+                                <div class="h-1 w-16 bg-teal-500 rounded-full mb-4"></div>
+                                <p class="font-sans text-xs text-gray-500 font-bold uppercase tracking-widest">Quality •
+                                    Comfort • Faith First</p>
+                            </div>
+                            <div class="flex flex-col gap-3 font-sans text-sm font-medium text-gray-600">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-500"></i>
+                                    Premium Heavyweight Cotton</span>
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-500"></i>
+                                    Minimalist Aesthetic</span>
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-check text-teal-500"></i>
+                                    Modest Fit</span>
+                            </div>
+                        </div>
+
+                        <!-- Philosophy / Quote -->
+                        <div
+                            class="relative bg-black text-white p-8 md:p-10 rounded-2xl shadow-lg transform md:-rotate-1 hover:rotate-0 transition-transform duration-300">
+                            <i
+                                class="fa-solid fa-quote-left text-teal-500 text-4xl absolute top-6 left-6 opacity-20"></i>
+                            <div class="relative z-10 text-center">
+                                <p class="text-xl md:text-2xl font-bold leading-relaxed mb-4">"শুধু একটি cloth না— এটি
+                                    একটি <span class="text-teal-400">reminder</span>, একটি <span
+                                        class="text-teal-400">iman boost</span>, একটি <span
+                                        class="text-teal-400">lifestyle</span>"</p>
+                            </div>
+                        </div>
+
+                        <!-- Calligraphy Feature -->
+                        <div class="text-center space-y-4">
+                            <div class="inline-block p-4 rounded-full bg-teal-50 text-teal-600 mb-2">
+                                <i class="fa-solid fa-pen-nib text-2xl"></i>
+                            </div>
+                            <h4 class="text-lg font-bold">Arabic Calligraphy</h4>
+                            <p class="text-gray-600 max-w-lg mx-auto">Featuring artistic representations of concepts
+                                like <span class="font-bold text-teal-600 font-sans">“شكر” (Shukr)</span> and Tawheed,
+                                designed to inspire reflection.</p>
+                        </div>
+
+                        <!-- Features Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center font-sans">
+                            <div
+                                class="p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-print text-teal-500 text-2xl mb-3"></i>
+                                <h5 class="font-bold text-gray-900">High-quality Print</h5>
+                            </div>
+                            <div
+                                class="p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-user-shield text-teal-500 text-2xl mb-3"></i>
+                                <h5 class="font-bold text-gray-900">Elegant & Modest</h5>
+                            </div>
+                            <div
+                                class="p-6 rounded-xl bg-white border border-gray-100 shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-gift text-teal-500 text-2xl mb-3"></i>
+                                <h5 class="font-bold text-gray-900">Perfect for Gift</h5>
+                            </div>
+                        </div>
+
+                        <!-- Contact / Footer -->
+                        <!-- Contact Info Grid -->
+                        <div class="pt-10 border-t border-gray-100 font-sans">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-10">
+                                <!-- Address -->
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 text-teal-600 text-xl">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-bold text-gray-900 mb-1 text-lg">Visit Us</h6>
+                                        <p class="text-sm text-gray-600 leading-relaxed">97/a Siddique Bazar,
+                                            Bongshal,<br>Dhaka, Bangladesh, 1100</p>
+                                    </div>
+                                </div>
+
+                                <!-- Contact -->
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center flex-shrink-0 text-teal-600 text-xl">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-bold text-gray-900 mb-1 text-lg">Email Us</h6>
+                                        <div class="text-sm text-gray-600 space-y-1">
+                                            <a href="mailto:tawhid.hossain17@gmail.com"
+                                                class="hover:text-teal-600 transition block font-medium">tawhid.hossain17@gmail.com</a>
+                                            <a href="mailto:tahwillclothing@gmail.com"
+                                                class="hover:text-teal-600 transition block font-medium">tahwillclothing@gmail.com</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Delivery Banner -->
+                            <div class="bg-gray-50 rounded-xl p-4 text-center mb-8 border border-gray-100">
+                                <p class="text-sm text-gray-800 font-bold flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-truck-fast text-teal-600 text-lg"></i>
+                                    Cash on Delivery Available (All over Bangladesh 🇧🇩)
+                                </p>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                                <a href="https://wa.me/8801610612147"
+                                    class="flex items-center justify-center gap-3 bg-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-teal-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                    <span>Chat on WhatsApp</span>
+                                </a>
+                                <a href="https://www.facebook.com/tahwillclothing" target="_blank"
+                                    class="flex items-center justify-center gap-3 bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-bold hover:bg-gray-50 hover:border-gray-300 transition-all duration-300">
+                                    <i class="fa-brands fa-facebook text-blue-600 text-xl"></i>
+                                    <span>Visit Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- CART SLIDE-OVER -->
+    <div id="cart-overlay" onclick="toggleCart()"
+        class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden transition-opacity opacity-0"></div>
+    <div id="cart-sidebar"
+        class="fixed inset-y-0 right-0 w-full sm:w-[400px] bg-white z-[60] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+
+        <div class="p-5 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="font-bold text-lg">Shopping Bag</h2>
+            <button onclick="toggleCart()" class="p-2 hover:bg-gray-100 rounded-full transition"><i
+                    class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Empty state -->
+            <div class="h-full flex flex-col items-center justify-center text-gray-400 space-y-4">
+                <i class="fa-solid fa-shirt text-4xl opacity-20"></i>
+                <p class="text-sm">Your bag is empty.</p>
+            </div>
+        </div>
+
+        <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <div class="flex justify-between text-sm mb-4">
+                <span class="text-gray-500">Subtotal</span>
+                <span id="cart-total" class="font-bold text-lg">$0.00</span>
+            </div>
+            <button onclick="checkoutToWhatsApp()"
+                class="w-full bg-black text-white py-4 rounded-lg font-bold hover:bg-gray-900 transition flex items-center justify-center gap-2">
+                <span>Checkout on WhatsApp</span>
+                <i class="fa-brands fa-whatsapp"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-3 rounded-full shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-3 z-50">
+        <i class="fa-solid fa-check-circle text-teal-400"></i>
+        <span id="toast-message" class="text-sm font-medium">Added to cart</span>
+    </div>
+
+    <script>
+        // CONFIG
+        const WHATSAPP_PHONE = "8801610612147";
+
+        // DATA
+        const inventory = [
+            {
+                id: 1,
+                title: "Utility Cargo Pant",
+                price: 2800,
+                originalPrice: 3500,
+                cat: "trouser",
+                images: [
+                    "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=80",
+                    "https://images.unsplash.com/photo-1517445312882-5627b9314586?w=600&q=80"
+                ],
+                colors: [
+                    { name: "Olive", hex: "#556B2F" },
+                    { name: "Black", hex: "#000000" }
+                ],
+                sizes: ["30", "32", "34", "36"]
+            },
+            {
+                id: 2,
+                title: "5 Times",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/5Times_black.jpg",
+                    "img_items/T-Shirts/5Times_white.jpg"
+                ],
+                colors: [
+                    { name: "Black", hex: "#000000" },
+                    { name: "White", hex: "#ffffff" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 3,
+                title: "Ask Allah Alone",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/AskAllahAlone_brown.jpg"
+                ],
+                colors: [
+                    { name: "Brown", hex: "#5C4033" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 4,
+                title: "Fajr",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/Fajr02_black.jpg",
+                    "img_items/T-Shirts/Fajr01_white.jpg",
+                    "img_items/T-Shirts/Fajr03_white.jpg"
+                ],
+                colors: [
+                    { name: "Black", hex: "#000000" },
+                    { name: "White", hex: "#ffffff" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 5,
+                title: "Islam Is About Surrender",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/IslamIsAboutSurrender_red.jpg"
+                ],
+                colors: [
+                    { name: "Red", hex: "#FF0000" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 6,
+                title: "Sabr",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/Sabr_black.jpg",
+                    "img_items/T-Shirts/Sabr_white.jpg"
+                ],
+                colors: [
+                    { name: "Black", hex: "#000000" },
+                    { name: "White", hex: "#ffffff" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                id: 7,
+                title: "Shukr",
+                price: 1200,
+                originalPrice: 1500,
+                cat: "t-shirt",
+                images: [
+                    "img_items/T-Shirts/Shukrblack.jpg",
+                    "img_items/T-Shirts/Shukrblack_2.jpg",
+                    "img_items/T-Shirts/Shukr_white.jpg",
+                    "img_items/T-Shirts/Shukr_white_2.jpg"
+                ],
+                colors: [
+                    { name: "Black", hex: "#000000" },
+                    { name: "White", hex: "#ffffff" }
+                ],
+                sizes: ["S", "M", "L", "XL"]
+            }
+        ];
+
+        let cart = [];
+        let selectedSizes = {};
+        let selectedColors = {};
+
+        // --- RENDER LOGIC ---
+
+        function renderProducts(items) {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = items.map(product => {
+                // Discount
+                let priceHtml = `<span class="text-sm font-medium">Tk ${product.price}</span>`;
+                let discountBadge = '';
+
+                if (product.originalPrice && product.originalPrice > product.price) {
+                    const diff = product.originalPrice - product.price;
+                    const percent = Math.round((diff / product.originalPrice) * 100);
+
+                    priceHtml = `
+                        <div class="flex flex-col items-end">
+                            <span class="text-xs text-gray-400 line-through">Tk ${product.originalPrice}</span>
+                            <span class="text-sm font-bold text-teal-600">Tk ${product.price}</span>
+                        </div>
+                    `;
+                    discountBadge = `<div class="absolute top-2 left-2 bg-teal-600 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wide z-10">Save ${percent}%</div>`;
+                }
+
+                // Size Chips
+                const sizeHtml = product.sizes.map(size => {
+                    const isSelected = selectedSizes[product.id] === size;
+                    return `<button onclick="selectSize(${product.id}, '${size}')" 
+                            class="text-xs w-8 h-8 rounded-full border transition-all duration-200 
+                            ${isSelected ? 'bg-black text-white border-black' : 'border-gray-300 text-gray-500 hover:border-black hover:text-black'}">
+                            ${size}
+                        </button>`;
+                }).join('');
+
+                // Color Chips
+                const colorHtml = product.colors.map(color => {
+                    const isSelected = selectedColors[product.id] === color.name;
+                    const isWhite = color.hex.toLowerCase() === '#ffffff' || color.hex.toLowerCase() === '#fff';
+                    const ringClass = isSelected ? 'ring-2 ring-offset-2 ring-black' : 'hover:scale-110';
+                    const borderClass = isWhite ? 'border border-gray-200' : '';
+
+                    return `<button onclick="selectColor(${product.id}, '${color.name}')" 
+                            class="w-6 h-6 rounded-full transition-all duration-200 ${ringClass} ${borderClass}"
+                            style="background-color: ${color.hex};"
+                            title="${color.name}"></button>`;
+                }).join('');
+
+                // Image Carousel
+                const imagesHtml = product.images.map(img =>
+                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0 snap-center" draggable="false">`
+                ).join('');
+
+                // Dots
+                const dotsHtml = product.images.length > 1 ? `
+                    <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-20 pointer-events-none">
+                         ${product.images.map((_, i) => `<div class="w-1.5 h-1.5 rounded-full bg-white/50 transition-colors" id="dot-${product.id}-${i}"></div>`).join('')}
+                    </div>
+                ` : '';
+
+                // Arrows
+                const arrowsHtml = product.images.length > 1 ? `
+                    <button onclick="scrollCarousel(${product.id}, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-md hidden md:flex">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="scrollCarousel(${product.id}, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-black w-8 h-8 flex items-center justify-center rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-md hidden md:flex">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                ` : '';
+
+                return `
+                <div class="group relative">
+                    <!-- Carousel -->
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-4 rounded-sm">
+                        ${discountBadge}
+                        <div id="carousel-${product.id}" class="flex w-full h-full overflow-x-auto snap-x no-scrollbar" onscroll="updateDots(${product.id})">
+                            ${imagesHtml}
+                        </div>
+                        ${arrowsHtml}
+                        ${dotsHtml}
+                        
+                        <!-- Desktop Quick Add -->
+                        <div class="absolute bottom-0 left-0 right-0 p-4 z-30 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden md:block">
+                            <button onclick="handleAddToCart(${product.id})" class="w-full bg-white text-black font-bold py-3 shadow-lg hover:bg-gray-100 transition">
+                                Add to Bag
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Header -->
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-sm uppercase tracking-wide pr-2">${product.title}</h3>
+                        ${priceHtml}
+                    </div>
+                    
+                    <!-- Selectors -->
+                    <div class="space-y-3 mb-4">
+                        <div class="flex gap-2 items-center">
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold w-8">Color</span>
+                            <div class="flex gap-2">${colorHtml}</div>
+                        </div>
+                        <div class="flex gap-2 items-center">
+                            <span class="text-[10px] text-gray-400 uppercase tracking-wider font-bold w-8">Size</span>
+                            <div class="flex flex-wrap gap-2">${sizeHtml}</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Buttons -->
+                    <div class="grid grid-cols-2 gap-2 md:hidden">
+                        <button onclick="handleAddToCart(${product.id})" class="border border-gray-300 py-2 text-sm font-medium rounded hover:border-black transition">Add</button>
+                        <button onclick="handleBuyNow(${product.id})" class="bg-black text-white py-2 text-sm font-medium rounded hover:opacity-80 transition">Buy</button>
+                    </div>
+
+                     <!-- Desktop WhatsApp Link -->
+                     <div class="hidden md:block">
+                        <button onclick="handleBuyNow(${product.id})" class="text-xs text-gray-400 hover:text-teal-600 font-bold uppercase tracking-wider flex items-center gap-1">
+                            <i class="fa-brands fa-whatsapp"></i> Buy directly
+                        </button>
+                     </div>
+                </div>
+                `;
+            }).join('');
+
+            items.forEach(p => updateDots(p.id));
+        }
+
+        // --- CAROUSEL LOGIC ---
+
+        function scrollCarousel(productId, direction) {
+            const container = document.getElementById(`carousel-${productId}`);
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
+        function updateDots(productId) {
+            const container = document.getElementById(`carousel-${productId}`);
+            if (!container) return;
+            const index = Math.round(container.scrollLeft / container.clientWidth);
+            const product = inventory.find(p => p.id === productId);
+            if (product && product.images.length > 1) {
+                product.images.forEach((_, i) => {
+                    const dot = document.getElementById(`dot-${productId}-${i}`);
+                    if (dot) {
+                        dot.className = i === index
+                            ? "w-1.5 h-1.5 rounded-full bg-white transition-colors"
+                            : "w-1.5 h-1.5 rounded-full bg-white/50 transition-colors";
+                    }
+                });
+            }
+        }
+
+        // --- INTERACTION LOGIC ---
+
+        function selectSize(productId, size) {
+            if (selectedSizes[productId] === size) {
+                delete selectedSizes[productId];
+            } else {
+                selectedSizes[productId] = size;
+            }
+            renderProducts(getCurrentFilteredProducts());
+        }
+
+        function selectColor(productId, colorName) {
+            if (selectedColors[productId] === colorName) {
+                delete selectedColors[productId];
+            } else {
+                selectedColors[productId] = colorName;
+            }
+            renderProducts(getCurrentFilteredProducts());
+        }
+
+        function validateSelection(id) {
+            const product = inventory.find(p => p.id === id);
+            const size = selectedSizes[id];
+            const color = selectedColors[id];
+
+            if (!size) {
+                showToast("Please select a size", true);
+                return null;
+            }
+            if (product.colors && product.colors.length > 0 && !color) {
+                showToast("Please select a color", true);
+                return null;
+            }
+
+            return {
+                size,
+                color: color || (product.colors.length === 1 ? product.colors[0].name : "Standard")
+            };
+        }
+
+        function handleAddToCart(id) {
+            const selection = validateSelection(id);
+            if (!selection) return;
+
+            const product = inventory.find(p => p.id === id);
+
+            const existingItemIndex = cart.findIndex(item =>
+                item.id === id &&
+                item.selectedSize === selection.size &&
+                item.selectedColor === selection.color
+            );
+
+            if (existingItemIndex > -1) {
+                cart[existingItemIndex].quantity += 1;
+                showToast(`Updated quantity for ${product.title}`);
+            } else {
+                cart.push({
+                    ...product,
+                    selectedSize: selection.size,
+                    selectedColor: selection.color,
+                    quantity: 1
+                });
+                showToast(`Added ${product.title}`);
+            }
+            updateCart();
+        }
+
+        function handleBuyNow(id) {
+            const selection = validateSelection(id);
+            if (!selection) return;
+
+            const product = inventory.find(p => p.id === id);
+            const msg = `Hi Tahwill! I want to buy the *${product.title}*\nColor: ${selection.color}\nSize: ${selection.size}\nIs it available?`;
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // --- CART LOGIC ---
+
+        function updateQuantity(idx, change) {
+            if (cart[idx].quantity + change <= 0) {
+                removeFromCart(idx);
+                return;
+            }
+            cart[idx].quantity += change;
+            updateCart();
+        }
+
+        function updateCart() {
+            const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+            document.getElementById('mobile-cart-badge').innerText = totalQty;
+            document.getElementById('desktop-cart-count').innerText = totalQty;
+            document.getElementById('mobile-cart-badge').style.opacity = totalQty > 0 ? '1' : '0';
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                <div class="h-full flex flex-col items-center justify-center text-gray-400 space-y-4">
+                    <i class="fa-solid fa-shirt text-4xl opacity-20"></i>
+                    <p class="text-sm">Your bag is empty.</p>
+                </div>`;
+            } else {
+                container.innerHTML = cart.map((item, idx) => `
+                    <div class="flex gap-4">
+                        <img src="${item.images[0]}" class="w-20 h-24 object-cover bg-gray-100 rounded-sm">
+                        <div class="flex-1 flex flex-col justify-between">
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-900">${item.title}</h4>
+                                <div class="text-xs text-gray-500 mt-1 flex flex-col">
+                                    <span>Color: ${item.selectedColor}</span>
+                                    <span>Size: ${item.selectedSize}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-end mt-2">
+                                <div class="flex items-center border border-gray-200 rounded">
+                                    <button onclick="updateQuantity(${idx}, -1)" class="px-2 py-1 text-gray-500 hover:bg-gray-50 text-xs">-</button>
+                                    <span class="px-2 text-xs font-medium">${item.quantity}</span>
+                                    <button onclick="updateQuantity(${idx}, 1)" class="px-2 py-1 text-gray-500 hover:bg-gray-50 text-xs">+</button>
+                                </div>
+                                
+                                <div class="flex flex-col items-end">
+                                    <span class="text-sm font-medium">Tk ${item.price * item.quantity}</span>
+                                    <button onclick="removeFromCart(${idx})" class="text-gray-400 text-[10px] hover:text-red-500 underline mt-1">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            document.getElementById('cart-total').innerText = "Tk " + total;
+        }
+
+        function removeFromCart(idx) {
+            cart.splice(idx, 1);
+            updateCart();
+        }
+
+        function checkoutToWhatsApp() {
+            if (cart.length === 0) return;
+
+            let msg = "Hi Tahwill, I would like to place an order:\n\n";
+            cart.forEach((item, i) => {
+                msg += `${i + 1}. ${item.title}\n   Color: ${item.selectedColor}, Size: ${item.selectedSize}\n   Qty: ${item.quantity} (Tk ${item.price * item.quantity})\n\n`;
+            });
+            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            msg += `*Total Amount: Tk ${total}*`;
+            msg += `\n\nPlease send me the payment details.`;
+
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // --- UTILS & FILTERS ---
+
+        let currentCat = 'all';
+
+        function getCurrentFilteredProducts() {
+            return inventory.filter(p => currentCat === 'all' || p.cat === currentCat);
+        }
+
+        function updateNavUI(activeCat) {
+            document.querySelectorAll('.nav-item').forEach(btn => {
+                if (btn.dataset.cat === activeCat) {
+                    btn.classList.remove('text-gray-500', 'bg-transparent');
+                    if (activeCat !== 'about') {
+                        btn.classList.add('bg-black', 'text-white');
+                    } else {
+                        // Keep About styled as text link even when active, or apply active style?
+                        // Let's apply a text color change for About to indicate active state subtly
+                        btn.classList.add('text-black', 'bg-gray-100');
+                    }
+                } else {
+                    if (btn.dataset.cat !== 'about') {
+                        btn.classList.add('text-gray-500', 'bg-transparent');
+                        btn.classList.remove('bg-black', 'text-white');
+                    } else {
+                        btn.classList.remove('text-black', 'bg-gray-100');
+                    }
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            currentCat = cat;
+            updateNavUI(cat);
+
+            // Show Grid, Hide About
+            document.getElementById('product-grid').classList.remove('hidden');
+            document.getElementById('about-section').classList.add('hidden');
+
+            // Update Title
+            document.getElementById('collection-title').innerText = cat === 'all' ? 'All Items' : (cat === 't-shirt' ? 'T-Shirts' : 'Trousers');
+            document.getElementById('collection-subtitle').classList.remove('hidden');
+
+            renderProducts(getCurrentFilteredProducts());
+
+            if (window.innerWidth < 768) toggleSidebar();
+        }
+
+        function showAbout() {
+            updateNavUI('about');
+
+            // Hide Grid, Show About
+            document.getElementById('product-grid').classList.add('hidden');
+            document.getElementById('about-section').classList.remove('hidden');
+
+            // Update Header
+            document.getElementById('collection-title').innerText = "About Us";
+            document.getElementById('collection-subtitle').classList.add('hidden');
+
+            if (window.innerWidth < 768) toggleSidebar();
+        }
+
+        // --- UI TOGGLES ---
+
+        function toggleSidebar() {
+            const sb = document.getElementById('sidebar');
+            const open = !sb.classList.contains('-translate-x-full');
+            if (open) {
+                sb.classList.add('-translate-x-full');
+            } else {
+                sb.classList.remove('-translate-x-full');
+            }
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById('cart-sidebar');
+            const overlay = document.getElementById('cart-overlay');
+            const hidden = cart.classList.contains('translate-x-full');
+
+            if (hidden) {
+                cart.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                cart.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        function showToast(msg, isError = false) {
+            const t = document.getElementById('toast');
+            const tm = document.getElementById('toast-message');
+            tm.innerText = msg;
+
+            if (isError) {
+                t.querySelector('i').className = "fa-solid fa-circle-exclamation text-teal-500";
+            } else {
+                t.querySelector('i').className = "fa-solid fa-check-circle text-teal-400";
+            }
+
+            t.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                t.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Init
+        renderProducts(inventory);
+
+    </script>
+</body>
+
+</html>
