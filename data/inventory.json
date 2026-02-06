@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "title": "Utility Cargo Pant",
+        "price": 2800,
+        "originalPrice": 3500,
+        "cat": "trouser",
+        "description": "Premium comfort meeting modern utility. ✨ ধীরস্থির স্টাইল এবং কমফোর্ট। 👖",
+        "images": [
+            "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=80",
+            "https://images.unsplash.com/photo-1517445312882-5627b9314586?w=600&q=80"
+        ],
+        "colors": [
+            { "name": "Olive", "hex": "#556B2F" },
+            { "name": "Black", "hex": "#000000" }
+        ],
+        "sizes": ["30", "32", "34", "36"],
+        "launchDate": "2024-02-10",
+        "outOfStock": true
+    },
+    {
+        "id": 2,
+        "title": "5 Times",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "🕋 A Daily Reminder. দিন ৫ বার নামাজ, ৫ বার আল্লাহর কাছে ফিরে যাওয়া। Salah Reminder. 🤍",
+        "images": [
+            "img_items/T-Shirts/5Times_black.jpg",
+            "img_items/T-Shirts/5Times_white.jpg"
+        ],
+        "colors": [
+            { "name": "Black", "hex": "#000000" },
+            { "name": "White", "hex": "#ffffff" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-14",
+        "outOfStock": false
+    },
+    {
+        "id": 3,
+        "title": "Ask Allah Alone",
+        "price": 700,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "🕋 Meaningful Design. T-Shirt টি শুধু fashion না— এটি Tawheed Reminder.✨",
+        "images": [
+            "img_items/T-Shirts/AskAllahAlone_brown.jpg"
+        ],
+        "colors": [
+            { "name": "Brown", "hex": "#5C4033" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-15",
+        "outOfStock": false
+    },
+    {
+        "id": 4,
+        "title": "Fajr",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Fajr is your victory. Start your day with success. 🌅 ফজর দিয়ে দিন শুরু করুন। 🕊️",
+        "images": [
+            "img_items/T-Shirts/Fajr02_black.jpg",
+            "img_items/T-Shirts/Fajr01_white.jpg",
+            "img_items/T-Shirts/Fajr03_white.jpg"
+        ],
+        "colors": [
+            { "name": "Black", "hex": "#000000" },
+            { "name": "White", "hex": "#ffffff" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-12",
+        "outOfStock": false
+    },
+    {
+        "id": 5,
+        "title": "Islam Is About Surrender",
+        "price": 700,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "True peace comes from surrendering to the Almighty. 🤲 ইসলাম মানেই আত্মসমর্পণ। ❤️",
+        "images": [
+            "img_items/T-Shirts/IslamIsAboutSurrender_red.jpg"
+        ],
+        "colors": [
+            { "name": "Maroon", "hex": "#800000" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-18",
+        "outOfStock": false
+    },
+    {
+        "id": 6,
+        "title": "Sabr",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Life tests us. But Sabr keeps us strong. 🖤 প্রিমিয়াম ইসলামিক টি-শার্ট।",
+        "images": [
+            "img_items/T-Shirts/Sabr_black.jpg",
+            "img_items/T-Shirts/Sabr_white.jpg"
+        ],
+        "colors": [
+            { "name": "Black", "hex": "#000000" },
+            { "name": "White", "hex": "#ffffff" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-20",
+        "outOfStock": false
+    },
+    {
+        "id": 7,
+        "title": "Shukr",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "“If you are grateful, I will increase you.” (Qur’an 14:7) 👉 Wear Shukr. Live with Barakah. 🌿",
+        "images": [
+            "img_items/T-Shirts/Shukrblack.jpg",
+            "img_items/T-Shirts/Shukrblack_2.jpg",
+            "img_items/T-Shirts/Shukr_white.jpg",
+            "img_items/T-Shirts/Shukr_white_2.jpg"
+        ],
+        "colors": [
+            { "name": "Black", "hex": "#000000" },
+            { "name": "White", "hex": "#ffffff" }
+        ],
+        "sizes": ["S", "M", "L", "XL"],
+        "launchDate": "2024-02-22",
+        "outOfStock": false
+    }
+]
