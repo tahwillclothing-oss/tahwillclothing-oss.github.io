@@ -408,9 +408,13 @@
                             title="${color.name}"></button>`;
                 }).join('');
 
+                const isJersey = product.cat === 'jersey';
+                const objectFit = isJersey ? 'object-contain' : 'object-cover';
+                const bgColor = isJersey ? 'bg-white' : 'bg-gray-100';
+
                 // Image Carousel
                 const imagesHtml = product.images.map(img =>
-                    `<img src="${img}" class="w-full h-full object-cover flex-shrink-0 snap-center" draggable="false">`
+                    `<img src="${img}" class="w-full h-full ${objectFit} flex-shrink-0 snap-center" draggable="false">`
                 ).join('');
 
                 // Dots
@@ -433,7 +437,7 @@
                 return `
                 <div class="group relative">
                     <!-- Carousel -->
-                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-4 rounded-sm">
+                    <div class="relative aspect-[3/4] overflow-hidden ${bgColor} mb-4 rounded-sm">
                         ${discountBadge}
                         ${product.outOfStock ? '<div class="absolute inset-0 bg-white/60 z-30 flex items-center justify-center"><span class="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest">Sold Out</span></div>' : ''}
                         <div id="carousel-${product.id}" class="flex w-full h-full overflow-x-auto snap-x no-scrollbar" onscroll="updateDots(${product.id})">
