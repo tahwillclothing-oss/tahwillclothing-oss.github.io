@@ -4,7 +4,7 @@
         "hide": 0,
         "title": "5 Times",
         "price": 500,
-        "originalPrice": 700,
+        "originalPrice": 500,
         "cat": "t-shirt",
         "description": "🕋 A Daily Reminder. দিন ৫ বার নামাজ, ৫ বার আল্লাহর কাছে ফিরে যাওয়া। Salah Reminder. 🤍",
         "images": [
@@ -34,7 +34,7 @@
         "id": 3,
         "hide": 0,
         "title": "Ask Allah Alone",
-        "price": 700,
+        "price": 500,
         "originalPrice": 700,
         "cat": "t-shirt",
         "description": "🕋 Meaningful Design. T-Shirt টি শুধু fashion না— এটি Tawheed Reminder.✨",
@@ -61,7 +61,7 @@
         "hide": 0,
         "title": "Fajr",
         "price": 500,
-        "originalPrice": 700,
+        "originalPrice": 500,
         "cat": "t-shirt",
         "description": "Fajr is your victory. Start your day with success. 🌅 ফজর দিয়ে দিন শুরু করুন। 🕊️",
         "images": [
@@ -92,7 +92,7 @@
         "id": 5,
         "hide": 0,
         "title": "Islam Is About Surrender",
-        "price": 700,
+        "price": 500,
         "originalPrice": 700,
         "cat": "t-shirt",
         "description": "True peace comes from surrendering to the Almighty. 🤲 ইসলাম মানেই আত্মসমর্পণ। ❤️",
@@ -119,7 +119,7 @@
         "hide": 0,
         "title": "Sabr",
         "price": 500,
-        "originalPrice": 700,
+        "originalPrice": 500,
         "cat": "t-shirt",
         "description": "Life tests us. But Sabr keeps us strong. 🖤 প্রিমিয়াম ইসলামিক টি-শার্ট।",
         "images": [
@@ -150,7 +150,7 @@
         "hide": 0,
         "title": "Shukr",
         "price": 500,
-        "originalPrice": 700,
+        "originalPrice": 500,
         "cat": "t-shirt",
         "description": "“If you are grateful, I will increase you.” (Qur’an 14:7) 👉 Wear Shukr. Live with Barakah. 🌿",
         "images": [
