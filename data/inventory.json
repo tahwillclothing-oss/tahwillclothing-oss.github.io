@@ -35,7 +35,7 @@
         "hide": 0,
         "title": "Ask Allah Alone",
         "price": 500,
-        "originalPrice": 500,
+        "originalPrice": 700,
         "cat": "t-shirt",
         "description": "🕋 Meaningful Design. T-Shirt টি শুধু fashion না— এটি Tawheed Reminder.✨",
         "images": [
@@ -93,7 +93,7 @@
         "hide": 0,
         "title": "Islam Is About Surrender",
         "price": 500,
-        "originalPrice": 500,
+        "originalPrice": 700,
         "cat": "t-shirt",
         "description": "True peace comes from surrendering to the Almighty. 🤲 ইসলাম মানেই আত্মসমর্পণ। ❤️",
         "images": [
@@ -185,7 +185,7 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey. Stylish and comfortable.",
+        "description": "🌿 Premium Sports Jersey. Stylish and comfortable. Perfect for the field! ⚽🔥",
         "images": [
             "img_items/Jersey/Dark Green Jersey.webp"
         ],
@@ -212,7 +212,7 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey - Now with more angles!",
+        "description": "⚡ Electrifying Green Jersey! Stand out with this vibrant premium sports gear. Now with more angles! 📸✅",
         "images": [
             "img_items/Jersey/Green Tahwill.webp",
             "img_items/Jersey/Green Tahwill2.webp"
@@ -240,7 +240,7 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey. Perfect fit.",
+        "description": "💖 Stylish Pink Jersey! Experience the perfect fit and premium quality. A must-have for your collection! ✨👚",
         "images": [
             "img_items/Jersey/Pink jersey parfect size.webp"
         ],
@@ -265,17 +265,17 @@
         "hide": 0,
         "title": "Halfmoon Jersey",
         "price": 500,
-        "originalPrice": 0,
+        "originalPrice": 500,
         "cat": "jersey",
-        "description": "Premium Sports Jersey with Halfmoon design.",
+        "description": "🌙 Exclusive Halfmoon Jersey! Unique design meets premium comfort. Elevate your game with this masterpiece! 🏆💫",
         "images": [
             "img_items/Jersey/halfmoon Jersey.webp",
             "img_items/Jersey/halfmoon Jersey1.webp"
         ],
         "colors": [
             {
-                "name": "Multicolor",
-                "hex": "#333333"
+                "name": "Navy Blue",
+                "hex": "#000080"
             }
         ],
         "sizes": [
