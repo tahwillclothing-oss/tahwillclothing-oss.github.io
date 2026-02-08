@@ -212,9 +212,10 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey. Stylish and comfortable.",
+        "description": "Premium Sports Jersey - Now with more angles!",
         "images": [
-            "img_items/Jersey/Green jersey.webp"
+            "img_items/Jersey/Green Tahwill.webp",
+            "img_items/Jersey/Green Tahwill2.webp"
         ],
         "colors": [
             {
@@ -239,7 +240,7 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey. Stylish and comfortable.",
+        "description": "Premium Sports Jersey. Perfect fit.",
         "images": [
             "img_items/Jersey/Pink jersey parfect size.webp"
         ],
@@ -266,9 +267,10 @@
         "price": 500,
         "originalPrice": 0,
         "cat": "jersey",
-        "description": "Premium Sports Jersey. Stylish and comfortable.",
+        "description": "Premium Sports Jersey with Halfmoon design.",
         "images": [
-            "img_items/Jersey/halfmoon Jersey.webp"
+            "img_items/Jersey/halfmoon Jersey.webp",
+            "img_items/Jersey/halfmoon Jersey1.webp"
         ],
         "colors": [
             {
