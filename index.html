@@ -363,6 +363,20 @@
         let selectedSizes = {};
         let selectedColors = {};
 
+        // Load Cart from LocalStorage
+        try {
+            const savedCart = localStorage.getItem('tahwill_cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                // We will call updateCart() after rendered, or just rely on render update?
+                // updateCart() updates the UI counters. We need to call it.
+                // However, updateCart relies on DOM elements being present.
+                // The DOM is present since we are at bottom of body.
+            }
+        } catch (e) {
+            console.error("Failed to load cart", e);
+        }
+
         // --- RENDER LOGIC ---
 
         function renderProducts(items) {
@@ -655,6 +669,9 @@
 
             const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
             document.getElementById('cart-total').innerText = "Tk " + total;
+
+            // Save to LocalStorage
+            localStorage.setItem('tahwill_cart', JSON.stringify(cart));
         }
 
         function removeFromCart(idx) {
@@ -786,6 +803,7 @@
 
         // Init
         loadInventory();
+        updateCart(); // Update UI with loaded cart data
 
     </script>
 </body>
