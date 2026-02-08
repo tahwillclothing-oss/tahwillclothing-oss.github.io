@@ -99,9 +99,9 @@
                 <button onclick="filterCategory('t-shirt')"
                     class="nav-item w-full text-left px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors"
                     data-cat="t-shirt">T-Shirts</button>
-                <button onclick="filterCategory('trouser')"
+                <button onclick="filterCategory('jersey')"
                     class="nav-item w-full text-left px-4 py-3 rounded-md text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors"
-                    data-cat="trouser">Trousers</button>
+                    data-cat="jersey">Jersey</button>
             </nav>
 
             <div class="p-6 border-t border-gray-100 text-xs text-gray-400">
@@ -346,7 +346,11 @@
             try {
                 const response = await fetch('data/inventory.json');
                 if (!response.ok) throw new Error('Failed to load inventory');
-                inventory = await response.json();
+                const allItems = await response.json();
+
+                // Filter out hidden items
+                inventory = allItems.filter(item => item.hide !== 1 && item.hide !== '1');
+
                 renderProducts(inventory);
             } catch (error) {
                 console.error('Error loading inventory:', error);
@@ -707,7 +711,7 @@
             document.getElementById('about-section').classList.add('hidden');
 
             // Update Title
-            document.getElementById('collection-title').innerText = cat === 'all' ? 'All Items' : (cat === 't-shirt' ? 'T-Shirts' : 'Trousers');
+            document.getElementById('collection-title').innerText = cat === 'all' ? 'All Items' : (cat === 't-shirt' ? 'T-Shirts' : 'Jersey');
             document.getElementById('collection-subtitle').classList.remove('hidden');
 
             renderProducts(getCurrentFilteredProducts());
