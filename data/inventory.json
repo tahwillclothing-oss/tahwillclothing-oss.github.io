@@ -8,8 +8,8 @@
         "cat": "t-shirt",
         "description": "🕋 A Daily Reminder. দিন ৫ বার নামাজ, ৫ বার আল্লাহর কাছে ফিরে যাওয়া। Salah Reminder. 🤍",
         "images": [
-            "img_items/T-Shirts/5Times_black.jpg",
-            "img_items/T-Shirts/5Times_white.jpg"
+            "img_items/T-Shirts/5Times_black.webp",
+            "img_items/T-Shirts/5Times_white.webp"
         ],
         "colors": [
             {
@@ -39,7 +39,7 @@
         "cat": "t-shirt",
         "description": "🕋 Meaningful Design. T-Shirt টি শুধু fashion না— এটি Tawheed Reminder.✨",
         "images": [
-            "img_items/T-Shirts/AskAllahAlone_brown.jpg"
+            "img_items/T-Shirts/AskAllahAlone_brown.webp"
         ],
         "colors": [
             {
@@ -65,9 +65,9 @@
         "cat": "t-shirt",
         "description": "Fajr is your victory. Start your day with success. 🌅 ফজর দিয়ে দিন শুরু করুন। 🕊️",
         "images": [
-            "img_items/T-Shirts/Fajr02_black.jpg",
-            "img_items/T-Shirts/Fajr01_white.jpg",
-            "img_items/T-Shirts/Fajr03_white.jpg"
+            "img_items/T-Shirts/Fajr02_black.webp",
+            "img_items/T-Shirts/Fajr01_white.webp",
+            "img_items/T-Shirts/Fajr03_white.webp"
         ],
         "colors": [
             {
@@ -97,7 +97,7 @@
         "cat": "t-shirt",
         "description": "True peace comes from surrendering to the Almighty. 🤲 ইসলাম মানেই আত্মসমর্পণ। ❤️",
         "images": [
-            "img_items/T-Shirts/IslamIsAboutSurrender_red.jpg"
+            "img_items/T-Shirts/IslamIsAboutSurrender_red.webp"
         ],
         "colors": [
             {
@@ -123,8 +123,8 @@
         "cat": "t-shirt",
         "description": "Life tests us. But Sabr keeps us strong. 🖤 প্রিমিয়াম ইসলামিক টি-শার্ট।",
         "images": [
-            "img_items/T-Shirts/Sabr_black.jpg",
-            "img_items/T-Shirts/Sabr_white.jpg"
+            "img_items/T-Shirts/Sabr_black.webp",
+            "img_items/T-Shirts/Sabr_white.webp"
         ],
         "colors": [
             {
@@ -154,10 +154,10 @@
         "cat": "t-shirt",
         "description": "“If you are grateful, I will increase you.” (Qur’an 14:7) 👉 Wear Shukr. Live with Barakah. 🌿",
         "images": [
-            "img_items/T-Shirts/Shukrblack.jpg",
-            "img_items/T-Shirts/Shukrblack_2.jpg",
-            "img_items/T-Shirts/Shukr_white.jpg",
-            "img_items/T-Shirts/Shukr_white_2.jpg"
+            "img_items/T-Shirts/Shukrblack.webp",
+            "img_items/T-Shirts/Shukrblack_2.webp",
+            "img_items/T-Shirts/Shukr_white.webp",
+            "img_items/T-Shirts/Shukr_white_2.webp"
         ],
         "colors": [
             {
@@ -187,7 +187,7 @@
         "cat": "jersey",
         "description": "Premium Sports Jersey. Stylish and comfortable.",
         "images": [
-            "img_items/Jersey/Dark Green Jersey.jpg"
+            "img_items/Jersey/Dark Green Jersey.webp"
         ],
         "colors": [
             {
@@ -214,7 +214,7 @@
         "cat": "jersey",
         "description": "Premium Sports Jersey. Stylish and comfortable.",
         "images": [
-            "img_items/Jersey/Green jersey.jpg"
+            "img_items/Jersey/Green jersey.webp"
         ],
         "colors": [
             {
@@ -241,7 +241,7 @@
         "cat": "jersey",
         "description": "Premium Sports Jersey. Stylish and comfortable.",
         "images": [
-            "img_items/Jersey/Pink jersey parfect size.jpg"
+            "img_items/Jersey/Pink jersey parfect size.webp"
         ],
         "colors": [
             {
@@ -268,7 +268,7 @@
         "cat": "jersey",
         "description": "Premium Sports Jersey. Stylish and comfortable.",
         "images": [
-            "img_items/Jersey/halfmoon Jersey.jpg"
+            "img_items/Jersey/halfmoon Jersey.webp"
         ],
         "colors": [
             {
