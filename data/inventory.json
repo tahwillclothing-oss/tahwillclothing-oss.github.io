@@ -287,5 +287,36 @@
         ],
         "launchDate": "2024-02-25",
         "outOfStock": false
-    }
+    },
+    {
+    "id": 12,
+    "hide": 0,
+    "title": "Tawakkul",
+    "price": 500,
+    "originalPrice": 500,
+    "cat": "t-shirt",
+    "description": "Trust Allah completely. Wear Tawakkul. Live with confidence. 🤍",
+    "images": [
+        "img_items/Jersey/Anas T shirt.png",
+    ],
+    "colors": [
+        {
+            "name": "Black",
+            "hex": "#000000"
+        },
+        {
+            "name": "White",
+            "hex": "#ffffff"
+        }
+    ],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
+    "launchDate": "2026-02-14",
+    "outOfStock": false
+}
+
 ]
