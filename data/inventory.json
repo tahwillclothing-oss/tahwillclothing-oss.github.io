@@ -287,6 +287,32 @@
         ],
         "launchDate": "2024-02-25",
         "outOfStock": false
+    },
+    {
+        "id": 12,
+        "hide": 0,
+        "title": "Alhamdulillah t shirt green",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Alhamdulillah",
+        "images": [
+            "img_items/T-Shirts/Alhamdulillah t shirt 1 green.png"
+        ],
+        "colors": [
+            {
+                "name": "Black",
+                "hex": "#000000"
+            }
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "launchDate": "2024-02-18",
+        "outOfStock": false
     }
 ]
 
