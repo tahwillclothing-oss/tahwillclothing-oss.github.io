@@ -289,20 +289,25 @@
         "outOfStock": false
     },
     {
-     "id": 12,
-     "hide": 0,
-     "title": "Assalamualikum T shirt black",
-     "price": 500,
-     "originalPrice": 700,
-     "cat": "t-shirt",
-     "description": "Assalamualikum T shirt black.",
-     "images": [
+      "id": 12,
+      "hide": 0,
+      "title": "Assalamualikum T shirt black",
+      "price": 500,
+      "originalPrice": 700,
+      "cat": "t-shirt",
+      "description": "Assalamualikum T shirt black.",
+      "images": [
         "img_items/Assalamualikum_black.webp.png"
     ],
     "colors": [
         { "name": "Black", "hex": "#000000" }
     ],
-    "sizes": ["S", "M", "L", "XL"],
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ],
     "launchDate": "2024-03-01",
     "outOfStock": false
 }
