@@ -622,6 +622,14 @@
             if (!selection) return;
 
             const product = inventory.find(p => p.id === id);
+            fbq('track', 'InitiateCheckout', {
+                content_name: product.title,
+                content_ids: [String(product.id)],
+                content_type: 'product',
+                value: product.price,
+                currency: 'BDT',
+                num_items: 1
+            });
             const msg = `Hi Tahwill! I want to buy the *${product.title}*\nColor: ${selection.color}\nSize: ${selection.size}\nIs it available?`;
             window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, '_blank');
         }
@@ -696,11 +704,20 @@
         function checkoutToWhatsApp() {
             if (cart.length === 0) return;
 
+            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+            const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+            fbq('track', 'InitiateCheckout', {
+                content_ids: cart.map(item => String(item.id)),
+                content_type: 'product',
+                value: total,
+                currency: 'BDT',
+                num_items: totalQty
+            });
+
             let msg = "Hi Tahwill, I would like to place an order:\n\n";
             cart.forEach((item, i) => {
                 msg += `${i + 1}. ${item.title}\n   Color: ${item.selectedColor}, Size: ${item.selectedSize}\n   Qty: ${item.quantity} (Tk ${item.price * item.quantity})\n\n`;
             });
-            const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
             msg += `*Total Amount: Tk ${total}*`;
             msg += `\n\nPlease send me the payment details.`;
 
