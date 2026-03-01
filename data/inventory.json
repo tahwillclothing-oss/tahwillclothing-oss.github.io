@@ -297,7 +297,7 @@
       "cat": "t-shirt",
       "description": "Assalamualikum T shirt black.",
       "images": [
-        "img_items/Assalamualikum_black.webp.png"
+        "img_items/Assalamualikum_black.png"
     ],
     "colors": [
         { "name": "Black", "hex": "#000000" }
