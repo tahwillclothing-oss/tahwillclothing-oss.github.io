@@ -154,8 +154,8 @@
         "cat": "t-shirt",
         "description": "“If you are grateful, I will increase you.” (Qur’an 14:7) 👉 Wear Shukr. Live with Barakah. 🌿",
         "images": [
-            "img_items/T-Shirts/Shukrblack.webp",
             "img_items/T-Shirts/Shukrblack_2.webp",
+            "img_items/T-Shirts/Shukrblack.webp",
             "img_items/T-Shirts/Shukr_white.webp",
             "img_items/T-Shirts/Shukr_white_2.webp"
         ],
@@ -287,5 +287,32 @@
         ],
         "launchDate": "2024-02-25",
         "outOfStock": false
+    },
+    {
+        "id": 12,
+        "hide": 0,
+        "title": "Alhamdulillah t shirt green",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Alhamdulillah",
+        "images": [
+            "img_items/T-Shirts/Alhamdulillah t shirt 1 green.png"
+        ],
+        "colors": [
+            {
+                "name": "Dark Green",
+                "hex": "#006400"
+            }
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "launchDate": "2024-02-18",
+        "outOfStock": false
     }
 ]
+
