@@ -269,8 +269,8 @@
         "cat": "jersey",
         "description": "🌙 Exclusive Halfmoon Jersey! Unique design meets premium comfort. Elevate your game with this masterpiece! 🏆💫",
         "images": [
-            "img_items/Jersey/halfmoon_Jersey.webp",
-            "img_items/Jersey/halfmoon_Jersey1.webp"
+            "img_items/Jersey/halfmoon Jersey.webp",
+            "img_items/Jersey/halfmoon Jersey1.webp"
         ],
         "colors": [
             {
@@ -291,17 +291,17 @@
     {
         "id": 12,
         "hide": 0,
-        "title": "Alhamdulillah t shirt green",
+        "title": "Alhamdulillah t shirt collection",
         "price": 500,
         "originalPrice": 700,
         "cat": "t-shirt",
         "description": "Alhamdulillah",
         "images": [
-            "img_items/T-Shirts/Alhamdulillah_coffee.jpeg",
-            "img_items/T-Shirts/Alhamdulillah_dark_gray.jpeg",
-            "img_items/T-Shirts/Alhamdulillah_mint_green.jpeg",
-            "img_items/T-Shirts/Alhamdulillah_leaf_green.jpeg",
-            "img_items/T-Shirts/Alhamdulillah_sky_blue.jpeg"
+            "img_items/T-Shirts/Alhamdulillah dark gray.jpeg",
+            "img_items/T-Shirts/Alhamdulillah mint green.jpeg",
+            "img_items/T-Shirts/Alahamdulillah coffe.jpeg",
+            "img_items/T-Shirts/Alhamdulillah light green.jpeg",
+            "img_items/T-Shirts/Alhamdulillah sky blue.jpeg"
         ],
         "colors": [
             {
