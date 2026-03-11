@@ -289,6 +289,7 @@
         "outOfStock": false
     },
     {
+       {
         "id": 12,
         "hide": 0,
         "title": "Alhamdulillah t shirt green",
@@ -297,36 +298,32 @@
         "cat": "t-shirt",
         "description": "Alhamdulillah",
         "images": [
-            "img_items/T-Shirts/Alahamdulillah coffe.jpeg"
-            "img_items/T-Shirts/Alhamdulillah dark gray.jpeg"
-            "img_items/T-Shirts/Alhamdulillah mint green.jpeg"
-            "img_items/T-Shirts/Alhamdulillah light green.jpeg"
+            "img_items/T-Shirts/Alahamdulillah coffe.jpeg",
+            "img_items/T-Shirts/Alhamdulillah dark gray.jpeg",
+            "img_items/T-Shirts/Alhamdulillah mint green.jpeg",
+            "img_items/T-Shirts/Alhamdulillah light green.jpeg",
             "img_items/T-Shirts/Alhamdulillah sky blue.jpeg"
         ],
         "colors": [
             {
-                [
-  {
-    "name": "Coffee Color",
-    "hex": "#6F4E37"
-  },
-  {
-    "name": "Dark Gray",
-    "hex": "#A9A9A9"
-  },
-  {
-    "name": "Leaf Green",
-    "hex": "#228B22"
-  },
-  {
-    "name": "Mint Green",
-    "hex": "#98FF98"
-  },
-  {
-    "name": "Sky Blue",
-    "hex": "#87CEEB"
-  }
-]
+                "name": "Coffee Color",
+                "hex": "#6F4E37"
+            },
+            {
+                "name": "Dark Gray",
+                "hex": "#A9A9A9"
+            },
+            {
+                "name": "Leaf Green",
+                "hex": "#228B22"
+            },
+            {
+                "name": "Mint Green",
+                "hex": "#98FF98"
+            },
+            {
+                "name": "Sky Blue",
+                "hex": "#87CEEB"
             }
         ],
         "sizes": [
