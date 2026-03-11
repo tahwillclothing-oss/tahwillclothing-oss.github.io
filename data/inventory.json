@@ -429,17 +429,17 @@
     {
         "id": 15,
         "hide": 0,
-        "title": "Tawakkul collection",
+        "title": "Just a traveller collection",
         "price": 500,
         "originalPrice": 700,
         "cat": "t-shirt",
-        "description": "Tawakkul collection 5 color",
+        "description": "Just a traveller collection 5 color",
         "images": [
-            "img_items/T-Shirts/Tawakkul Dark gray.jpeg",
-            "img_items/T-Shirts/Tawakkul Mint green.jpeg",
-            "img_items/T-Shirts/Tawakkul Sky blue.jpeg",
-            "img_items/T-Shirts/Tawakkul coffee.jpeg",
-            "img_items/T-Shirts/tawakkul leaf green.jpeg"
+            "img_items/T-Shirts/Just tavel sky.jpeg",
+            "img_items/T-Shirts/Just a travel coffee.jpeg",
+            "img_items/T-Shirts/Just a travel green.jpeg",
+            "img_items/T-Shirts/Just a tavel Dark gray.jpeg",
+            "img_items/T-Shirts/Just a travek mint.jpeg"
         ],
         "colors": [
             {
