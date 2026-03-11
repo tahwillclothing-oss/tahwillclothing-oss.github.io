@@ -471,5 +471,97 @@
         ],
         "launchDate": "2024-02-18",
         "outOfStock": false
+    },
+    {
+        "id": 16,
+        "hide": 0,
+        "title": "Tawakkul collection",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Tawakkul collection 5 color",
+        "images": [
+            "img_items/T-Shirts/Tawakkul Dark gray.jpeg",
+            "img_items/T-Shirts/Tawakkul Mint green.jpeg",
+            "img_items/T-Shirts/Tawakkul Sky blue.jpeg",
+            "img_items/T-Shirts/Tawakkul coffee.jpeg",
+            "img_items/T-Shirts/tawakkul leaf green.jpeg"
+        ],
+        "colors": [
+            {
+                "name": "Coffee Color",
+                "hex": "#6F4E37"
+            },
+            {
+                "name": "Dark Gray",
+                "hex": "#A9A9A9"
+            },
+            {
+                "name": "Leaf Green",
+                "hex": "#228B22"
+            },
+            {
+                "name": "Mint Green",
+                "hex": "#98FF98"
+            },
+            {
+                "name": "Sky Blue",
+                "hex": "#87CEEB"
+            }
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "launchDate": "2024-02-18",
+        "outOfStock": false
+    },
+    {
+        "id": 17,
+        "hide": 0,
+        "title": "Travel Temporary collection",
+        "price": 500,
+        "originalPrice": 700,
+        "cat": "t-shirt",
+        "description": "Travel Temporary collection 5 color",
+        "images": [
+            "img_items/T-Shirts/Travel sky blue.jpeg",
+            "img_items/T-Shirts/Travel coffee color.jpeg",
+            "img_items/T-Shirts/Travel leaf green.jpeg",
+            "img_items/T-Shirts/Travel mintgreen.jpeg",
+            "img_items/T-Shirts/Travel sky blue.jpeg"
+        ],
+        "colors": [
+            {
+                "name": "Coffee Color",
+                "hex": "#6F4E37"
+            },
+            {
+                "name": "Dark Gray",
+                "hex": "#A9A9A9"
+            },
+            {
+                "name": "Leaf Green",
+                "hex": "#228B22"
+            },
+            {
+                "name": "Mint Green",
+                "hex": "#98FF98"
+            },
+            {
+                "name": "Sky Blue",
+                "hex": "#87CEEB"
+            }
+        ],
+        "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ],
+        "launchDate": "2024-02-18",
+        "outOfStock": false
     }
 ]
